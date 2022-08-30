@@ -17,12 +17,12 @@ async function run() {
     const comment_includes: string = core.getInput('comment_includes');
     const reactions: string = core.getInput('reactions');
 
-    if(!filePath && !message) {
+    if (!filePath && !message) {
       throw new Error('either filePath or message input should be provided!');
     }
 
-    if(filePath) {
-      if(!process.env.GITHUB_WORKSPACE) {
+    if (filePath) {
+      if (!process.env.GITHUB_WORKSPACE) {
         throw new Error('GITHUB_WORKSPACE is not set! please make sure to use action/checkout action!');
       }
       const _path = path.resolve(process.env.GITHUB_WORKSPACE, filePath);
