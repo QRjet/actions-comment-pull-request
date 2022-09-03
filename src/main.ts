@@ -8,6 +8,8 @@ import { GetResponseDataTypeFromEndpointMethod } from '@octokit/types';
 const REACTIONS = ['+1', '-1', 'laugh', 'confused', 'heart', 'hooray', 'rocket', 'eyes'] as const;
 type Reaction = typeof REACTIONS[number];
 
+const x = "remove this line";
+
 async function run() {
   try {
     let message: string = core.getInput('message');
